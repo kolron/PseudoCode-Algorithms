@@ -10,20 +10,21 @@ Hi! in this repository I have some (And will continue to add!) PsuedoCode for po
 
 |                | Related algorithms and usages            |Time Complexity(O)|
 |----------------|-------------------------------|-----------------------------|
-|BFS             | Prim's-MST, Djikstra's, Connectivity.. Much more..          |
-|Djikstra's      | BiDirectional Djikstra's      |                             |
-|BiDirectional Djikstra's|                       |                             |
-|Prim's-MST      |                               |                             |
-|Kruskal's-MST   |                               |                             |
-|Huffman Code    |  File compression             |                             |
-|DFS             | Cycles, Connectivity, Isomorphic tress.. much more.                            |                             |
-|Maximum Shortest Subarray| Gas-station problem  |                             |
-|Maximum SubMatrix|                              |                             |
-|Floyd-Warshall|                                 |                             |
-|Euler Path and Cycles|                          |                             |
-|Fire            |                               |                             |
-|Isomorphic Tree            |                               |                             |
-|Boruvka's-MST            |                               |                             |
+|BFS             | Prim's-MST, Djikstra's, Connectivity.. Much more..|              |
+|Djikstra's      | BiDirectional Djikstra's           |                             |
+|BiDirectional Djikstra's|                            |                             |
+|Prim's-MST      |                                    |                             |
+|Kruskal's-MST   |                                    |                             |
+|Huffman Code    |  File compression                  |                             |
+|DFS             | Cycles, Connectivity, Isomorphic tress.. Much more..|            |
+|Maximum Shortest Subarray| Gas-station problem       |                             |
+|Maximum SubMatrix    |                               |                             |
+|Floyd-Warshall       |                               |                             |
+|Euler Path and Cycles|                               |                             |
+|Fire                 |                               |                             |
+|Isomorphic Tree      |                               |                             |
+|Boruvka's-MST        |                               |                             |
+|TreeFromDegree       |                               |                             |
 
 
 
