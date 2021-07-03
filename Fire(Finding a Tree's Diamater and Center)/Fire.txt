@@ -1,0 +1,26 @@
+Fire(Tree T)
+    nodes = |T(V)| 
+    queue q
+    radius = 0
+    diamater = 0    
+    for each (node in T(V)):
+        if (node.degree() = 1):
+            q.enqueue(node)
+    
+    while (nodes > 2):
+        for (i = 0 to q.size()):
+            curr = q.dequeue()
+            curr.degree() = 0
+            nodes = nodes - 1
+            for each (nei in curr.adj()):
+                nei.degree() = nei.degree() - 1 
+                if (nei.degree() == 1):
+                    q.enqueue(nei)
+        radius += 1
+        
+    if (nodes == 2):
+        diamater = 2*radius + 1 
+        radius = radius + 1 
+    else:
+        diamater = 2*radius 
+    

@@ -1,0 +1,46 @@
+BiDjikstra(Graph G, node src, node dest):
+    Graph RG = reverseEdges(G)
+    size = |G(V)|
+    PriorityQueue  q 
+    PriorityQueue rq 
+    dist[size] = rdist[size] = inf
+    visited[size] = rvisited[size] = false 
+    prev[size] = rprev[size] = null
+    
+    dist[src] = 0 
+    dist[dest] = 0
+    q.enqueue(src)
+    rq.enqueue(dest)
+    
+    while(!q.isEmpty() AND !rq.isEmpty()):
+        curr = q.dequeue()
+        for each(nei in curr.adj()):
+            if(visited[nei] = false AND dist[nei] > dist[curr] + weight(curr,nei)):
+                dist[nei] = dist[curr] + weight(curr,nei)
+                prev[nei] = curr 
+                if(q.contains(nei)):
+                    q.updateKey(nei)
+                else:
+                    q.enqueue(nei)
+        visited[curr] = true
+        
+        rcurr = rq.dequeue()
+        for each(rnei in rcurr.adj()):
+            if(rvisited[rnei] = false AND rdist[rnei] > rdist[rcurr] + weight(rcurr,rnei)):
+                rdist[rnei] = rdist[rcurr] + weight(rcurr,rnei)
+                rprev[rnei] = rcurr
+                if(rq.contains(rnei)):
+                    rq.updateKey(rnei)
+                else:
+                    rq.enqueue(rnei)
+            visited[rcurr] = true
+            
+            if (visited[ru] not null AND rvisited[ru] not null):
+                break
+    minDist = inf 
+    for each(node in G(V)):
+        if((visited[node] not null OR rvisited[node] not null)
+            AND (dist[node] != inf AND rdist[node] != inf)
+            AND (minDist > dist[node] + rdist[node])):
+                minDist = dist[node] + rdist[node]
+    return minDist

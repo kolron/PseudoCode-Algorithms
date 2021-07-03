@@ -1,0 +1,12 @@
+Kruskal(Graph G):
+    Tree T 
+    for each (node in G(V)):
+        makeSet(node)
+    sort(G(E)) //by min weight
+    for each (edge in (G(E))):
+        if(findSet(edge.v) != findSet(edge.u)):
+            T.addEdge(edge)
+            Union(v,u)
+        if (|T(E)| == |G(V)| - 1):
+            return T
+    

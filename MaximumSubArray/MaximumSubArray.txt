@@ -1,0 +1,18 @@
+MaximumSubArray(array A);
+    sum = 0;
+    temp_sum=0
+    start = 0;
+    temp_start = 0
+    _end = 0;
+    
+    for(i = 0 to A.size()):
+        temp_sum += A[i]
+        if(temp_sum > sum):
+            sum = temp_sum
+            _end = i;
+            start = temp_start
+        if(temp_sum < 0):
+            temp_sum = 0
+            temp_start = i+1 
+    return(sum, start,_end)
+    

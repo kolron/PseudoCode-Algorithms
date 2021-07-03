@@ -1,0 +1,22 @@
+DFS(Graph G)
+    time = 0
+    size = |G(V)|
+    color[size] = white
+    prev[size] = NULL
+    dist[size] = inf
+    
+    for each (node in G(V)):
+        if (color[node] == white):
+            DFS-VISIT(G,s)
+    return;     
+DFS-VISIT(Graph G,Node curr):
+    color[curr] = grey
+    time = time + 1
+    dist[curr] = time
+    for each(nei in curr.adj()):
+        if (color[nei] == white):
+            prev[nei] = curr
+            DFS-VISIT(G,nei)
+    color[curr] = black
+    return;
+    

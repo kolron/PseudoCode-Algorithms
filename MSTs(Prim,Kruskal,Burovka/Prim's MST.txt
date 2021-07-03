@@ -1,0 +1,24 @@
+Prim(Graph G):
+    size = |G(V)|
+    PriorityQueue q //sort by min dist
+    node src = G.PickRandomNode()
+    dist[size] = inf
+    prev[size] = null
+    visit[size] = false;
+    dist[source] = 0
+    Tree t 
+    q.enqueue(src)
+    while(q is not empty):
+        node curr = q.extractMin()
+        if (prev[curr] != null):
+            t.addEdge(curr,prev[curr])
+        for each (nei in curr.adj()):
+            if(visit[nei] = false AND dist[nei] > dist[curr] + weight(curr,nei)):
+                dist[nei] = dist[curr] + weight(curr,nei)
+                prev[nei] = curr
+                if(q.contains(nei)):
+                    q.updateKey(nei,dist[nei])
+                else:
+                    q.enqueue(nei)
+        visit[curr] = true
+    return t;

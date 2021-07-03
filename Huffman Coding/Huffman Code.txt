@@ -1,0 +1,43 @@
+Huffman(Array A)
+    if (!A.sorted()):
+        A.sort();
+    
+    PriorityQueue q1 //sort by min freq
+    PriorityQueue q2 //sort by min freq
+    node last
+    
+    for (i = 0 to A.size()):
+        CreateNode node
+        node.char = A[i].char
+        node.freq = A[i].freq
+        q1.enqueue(node)
+    
+    while(q1.size() + q2.size > 0):
+        node x = min(q1.extractMin(), q2.extractMin())
+        node y = min(q1.extractMin(), q2.extractMin())
+        node z 
+        
+        z.freq = x.freq = y.freq
+        z.left = x 
+        z.right = y 
+        
+        x.parent = z 
+        y.parent = z 
+        last = z
+        q2.enqueue(z)
+        
+    if (q1.isEmpty()):
+        root = q2.dequeue()
+        
+    else:
+        root = last;
+    
+    return root;
+    
+getCode(Node root):
+    if (root.right == NULL and root.left = NULL):
+        print(root.char)
+    else:
+        print("0" + getCode(root.left)
+        print("1" + getCode(root.right))
+    return;

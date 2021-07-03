@@ -1,0 +1,29 @@
+IsIsomorphic(Tree T1, tree T2): //for rooted trees.
+							    // for unrooted, find the center(s) for each tree and do the same.
+    root1 = T1.findRoot()
+    root2 = T2.findRoot()
+    treeCode1 = GenerateCode(T1, root1)
+    treeCode2 = GenerateCode(T2, root2)
+    
+    if(treeCode1 == treeCode2):
+        return true
+    else:
+        return false
+        
+GenerateCode(Tree T, Node root): //this method equivalent to "DFS"
+    string[] treeString[|T(V)|] = "0"
+    color[|T(V)|] = white 
+        
+    GetTreeCode(T, root, treeString, color);
+    return sort(treeString)
+    
+GetTreeCode(Tree T, node curr, string[] treeString, color[]):  //this method equivalent to "DFS"
+    color[curr] = black
+    if(curr.degree()==1): // if node is leaf
+        treeString[curr] = "01"
+    else: //DFS traversal
+        for each(nei in curr.adj()):
+            if(color[nei] == white):
+                GetTreeCode(T,nei,treeString,color)
+                treeString[curr] = treeString[curr] + treeString[nei]
+        treeString[curr] = treeString[curr] + "1"

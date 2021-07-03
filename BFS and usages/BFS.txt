@@ -1,0 +1,22 @@
+BFS(Graph G):
+    size = |G(V)|
+    dist[size] = inf
+    color[size] = white
+    prev[size] = null
+    queue q
+    node src = G.PickRandomNode()
+    q.enqueue(src)
+    color[src] = grey
+    dist[src] = 0
+    prev[src] = 0
+    
+    while(q is not empty):
+        curr = q.dequeue()
+        for(each nei in curr.adj()):
+            if(color[nei] == white):
+                prev[nei] = curr
+                color[nei] = grey
+                dist[nei] = dist[curr] + 1
+                q.enqueue(nei)
+        color[curr] = black
+    return(dist,prev)

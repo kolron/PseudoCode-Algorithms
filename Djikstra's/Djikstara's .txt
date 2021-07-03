@@ -1,0 +1,25 @@
+Djikstra(Graph G, node s):
+    PriorityQueue q
+    size = |G(V)|
+    visited[size] = false // == color[size], same use 
+    prev[size] = null
+    dist[size] = inf
+    
+    prev[s] = 0;
+    dist[s] = 0
+    visited[s] = true 
+    q.enqueue(s)
+    
+    while(q is not empty):
+        curr = q.extractMin()
+        for(each nei in curr.adj()):
+            if (visited[nei] == false):
+                if(dist[nei] > dist[curr] + weight(curr,nei)):
+                    prev[nei] = curr
+                    dist[nei] = dist[curr] + weight(curr,nei)
+                    if q.contains(nei):
+                        q.updateKey(nei,dist[nei])
+                    else:
+                        q.enqueue(nei)
+        visited[curr] = true
+    return(dist,prev)

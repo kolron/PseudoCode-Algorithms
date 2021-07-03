@@ -1,0 +1,36 @@
+hasEuler(Graph G)
+    count = 0
+    CycleNode = 0
+    PathNode = 0
+    for each (node in G(V)):
+        if ((node.degree() % 2) == 1):
+            count++
+            PathNode = node 
+        else:
+            CycleNode = node
+            
+    if (count > 2):
+        print("No path or circle")
+    
+    if(isConnected(G)):
+        if(count == 0):
+            print("cycle possible")
+            return eulerCycleOrPath(G, CycleNode)
+        else: //count == 1 
+            print("path possible")
+            return eulerCycleOrPath(G,PathNode)
+    
+eulerCycleOrPath(Graph G, Node src):
+    List path 
+    Stack stack 
+    stack.push(src)
+    while(!stack.isEmpty()):
+        curr = stack.top()
+        if(curr.degree()==0):
+            stack.pop()
+            path.add(u)
+        else
+            nei = curr.adj().PickRandomNode()
+            nei.push()
+            G(E).removeEdge(curr,nei)
+    return path

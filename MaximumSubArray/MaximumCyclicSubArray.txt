@@ -1,0 +1,18 @@
+MaximumCyclicSubArray(array A):
+    negA[A.size()]
+    total_sum = 0
+    for (i = 0 to A.size()):
+        negA[i] = -A[i]
+        
+        total_sum += A[i]
+    
+    neg_best = best(negA) //(sum,start,end)
+    reg_best = best(A)    //(sum,start,end)
+    
+    cycle_sum = (total_sum-(-1*neg_best.sum()))
+    
+    if (cycle_sum = reg_best.sum()):
+        return reg_best;
+    else:
+        return (cycle_sum, (neg_best.end()+1) % A.size(), neg_best.start() - 1)
+

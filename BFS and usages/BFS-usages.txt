@@ -1,0 +1,52 @@
+hasCycle(Graph G):
+    size = |G(V)|
+    color[size] = white
+    prev[size] = null
+    node s = G.PickRandomNode()
+    Queue q 
+
+    color[s] = grey
+    q.enqueue(s)
+    while (q is not empty):
+        curr = q.dequeue()
+        for each(nei in curr.adj()):
+            if (color[nei] == white)
+                color[nei] = grey
+                prev[nei] = curr
+                q.enqueue(s)
+            else if(color[nei] != white AND prev[curr] != nei)
+                return true //has hasCycle
+        color[s] = black
+        
+    return false
+    
+isConnected(Graph G)
+    Queue q 
+    size = |G(V)|
+    color[size]
+    prev[size] 
+    node src = G.PickRandomNode()
+    
+    color[src] = grey
+    q.enqueue(src)
+    while (q is not empty):
+        curr = q.dequeue()
+        for each (nei in curr.adj()):
+            if(color[nei] == white):
+                prev[nei] = curr
+                color[nei] = grey
+                q.enqueue(curr)
+            
+        color[curr] = black
+    for each(node in G(V)):
+        if (color[node] != black)
+            return false
+    return true 
+
+NumOfCC(G)
+    BFS(G)
+    for each(node in G(V)):
+        if (color[node] != black)
+            BFS(G,node)
+            count +=1
+    return count 

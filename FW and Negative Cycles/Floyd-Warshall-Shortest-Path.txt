@@ -1,0 +1,17 @@
+FW(Graph G):
+    Matrix[][] dist
+    Matrix[][] path
+    //Initialize original Dist according to the adjacency Matrix G
+    for (i = 0 to |G(V)|):
+        for(j=0 to |G(V)|):
+            dist[i][j] = G[i][j]
+            if(dist[i][j] != 0 or inf):
+                path[i][j] = "-->" + j
+                
+    for (k = 0 to |G(V)|): //Use intermidiate node K to improve dist(i,j)
+        for (i = 0 to |G(V)|):
+            for (j = 0 to |G(V)|):
+            if(dist[i][j] < dist[i][k] + dist[k][j]):
+                dist[i][j] = dist[i][k] + dist[k][j]
+                path[i][j] = path[i][k] + path[k][j]
+    retu

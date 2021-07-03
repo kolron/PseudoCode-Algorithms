@@ -1,0 +1,7 @@
+hasNegativeCycle(Graph G)
+    dist = FW(G).dist()
+    for(i = to |G(V)|):      // This is not accurate!!
+        if (dist[i][i] < 0): // Correct way to do this is during FW run-time.
+            return true      // Check for degree during run-time, not after. this won't actually work.
+    return false
+    

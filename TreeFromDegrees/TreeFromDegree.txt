@@ -1,0 +1,20 @@
+TreeFromDegree(Array A):
+    Tree adjacency[]
+    sum = 0
+    for(i = o to A.size()):
+        sum += A[i]
+    if sum != 2*(A.size() - 1):
+        return "Can't build a TREE from this."
+    sort(A)
+    j = 0
+    for (i = 0 to A.size()): //find the first node(j) who is not a leaf node
+        if(A[i] > 1):
+            j=i 
+            
+    for(i = 0 to A.size()-2):
+        adjacency[i] = j //now for each node, set the first non-leaf node as it's neighbor
+        A[j] = A[j] - 1  //update j's capacity
+        
+        if (A[j] == 1): //if j can only connect 1 more time 
+            j = j+1 //make sure we connect it to the rest of the tree by increasing the connecting nodes' index
+    return adjacency
