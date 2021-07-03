@@ -1,6 +1,6 @@
-# PsuedoCode repository for popular Algorithms
+# PsuedoCode repository for common Algorithms
 
-Hi! in this repository I have some (And will continue to add!) PsuedoCode for popular algorithms and some of their implications.
+Hi! in this repository I have some (And will continue to add!) PsuedoCode for common algorithms and some of their implications.
 
 
 
